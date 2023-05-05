@@ -2,7 +2,7 @@ package io.codelex.classesandobjects.practice;
 
 import java.awt.*;
 
-public class swapPoints {
+public class SwapPoints {
     public static void swapPoints(Point p1, Point p2) {
         int pointX = p1.x;
         int pointY = p1.y;
