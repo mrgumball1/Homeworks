@@ -16,7 +16,29 @@ public class LargestNumber {
 
         System.out.print("Input the 3rd number: ");
         int num3 = in.nextInt();
+        int min, max;
 
+        if (num1 >= num2)
+            if (num1 >= num3) {
+                max = num1;
+                if (num2 >= num3) min = num3;
+                else min = num2;
+            } else {
+                max = num3;
+                min = num2;
+            }
+        else if (num2 >= num3) {
+            max = num2;
+            if (num1 >= num3) min = num3;
+            else min = num1;
+        } else {
+            max = num3;
+            if (num1 >= num2) min = num2;
+            else min = num1;
+        }
+
+
+        System.out.println("Largest number is: " + max);
         /*
         todo - expected output:
         Input the 1st number: 25
