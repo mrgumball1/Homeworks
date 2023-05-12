@@ -17,8 +17,7 @@ public class Exercise1 {
 
     }
     public static boolean result(int z, int q) {
-        if (z == 15 || q == 15) return true;
-        return ((z + q) == 15 || Math.abs(z - q) == 15);
+        return z == 15 || q == 15 || (z + q) == 15 || Math.abs(z - q) == 15;
         }
 
 
