@@ -1,4 +1,4 @@
-package io.codelex.flowcontrol.practice;
+package io.codelex.loops.practice;
 
 import java.util.Scanner;
 
