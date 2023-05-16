@@ -1,4 +1,4 @@
-package io.codelex.flowcontrol.practice;
+package io.codelex.loops.practice;
 
 public class AsciiFigure {
     public static final int rows = 7;
