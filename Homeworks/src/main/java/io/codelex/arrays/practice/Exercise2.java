@@ -1,5 +1,6 @@
 package io.codelex.arrays.practice;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercise2 {
@@ -18,12 +19,14 @@ public class Exercise2 {
         int myArray[];
         int sum = 0;
 
-        /*
-        fixme
-        for (........) {
-        ........
+
+        //fixme
+        myArray = new int[maxNumber - minNumber + 1];
+                for (int i = 0; i < myArray.length; i++) {
+            myArray[i] = minNumber + i;
+            sum += myArray[i];
         }
-        */
+
 
         System.out.println("The sum is " + sum);
     }
