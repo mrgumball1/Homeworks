@@ -48,6 +48,7 @@ public class VideoStoreTest {
 
     private static void rentVideo(Scanner scanner) {
         //todo - rent video
+
     }
 
     private static void returnVideo(Scanner scanner) {
