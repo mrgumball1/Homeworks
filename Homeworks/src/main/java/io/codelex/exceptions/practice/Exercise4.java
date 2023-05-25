@@ -1,5 +1,13 @@
 package io.codelex.exceptions.practice;
 
+import java.util.Scanner;
+
+class NonPositiveNumberException extends Exception {
+    public NonPositiveNumberException(String message) {
+        super(message);
+    }
+}
+
 public class Exercise4 {
     public static void main(String[] args) {
         try {
@@ -11,16 +19,17 @@ public class Exercise4 {
             System.out.println("Be sure to enter a number.");
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Enter number as first parameter.");
-        } /* todo -
-         catch (NonPositiveNumberException e) {
-        System.out.println("Result will be imaginary number.");
+        } catch (NonPositiveNumberException e) {
+            System.out.println("Result will be imaginary number.");
         }
-        */
+
     }
 
-    static double getInput(String s) {
-        double d = new Double(s).doubleValue();
-        // Throw an NonPositiveNumberException if d is less than 0
-        return d;
+    static double getInput(String s) throws NonPositiveNumberException {
+        double d = Double.parseDouble(s);
+        if (d < 0) {
+            throw new NonPositiveNumberException("Input positive numbers");
+        }
+            return d;
     }
 }
