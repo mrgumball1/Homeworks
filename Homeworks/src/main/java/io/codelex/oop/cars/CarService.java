@@ -110,38 +110,38 @@ class CarService {
                 if (carManufacturer.equals(manufacturer)) {
                     int carManufacturerYear = carManufacturer.getYearOfEstablishment();
                     switch (comparisonOperator) {
-                        case "<":
+                        case "<" -> {
                             if (carManufacturerYear < year) {
                                 result.add(car);
                             }
-                            break;
-                        case ">":
+                        }
+                        case ">" -> {
                             if (carManufacturerYear > year) {
                                 result.add(car);
                             }
-                            break;
-                        case "<=":
+                        }
+                        case "<=" -> {
                             if (carManufacturerYear <= year) {
                                 result.add(car);
                             }
-                            break;
-                        case ">=":
+                        }
+                        case ">=" -> {
                             if (carManufacturerYear >= year) {
                                 result.add(car);
                             }
-                            break;
-                        case "=":
+                        }
+                        case "=" -> {
                             if (carManufacturerYear == year) {
                                 result.add(car);
                             }
-                            break;
-                        case "!=":
+                        }
+                        case "!=" -> {
                             if (carManufacturerYear != year) {
                                 result.add(car);
                             }
-                            break;
-                        default:
-                            throw new IllegalArgumentException("Invalid comparison operator: " + comparisonOperator);
+                        }
+                        default ->
+                                throw new IllegalArgumentException("Invalid comparison operator: " + comparisonOperator);
                     }
                     break;
                 }
