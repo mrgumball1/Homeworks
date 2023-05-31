@@ -14,6 +14,9 @@ public class Histogram {
     public static void main(String[] args) throws IOException, URISyntaxException {
         final String scores = fileContent();
         System.out.println(scores);
+        
+
+
     }
 
     private static String fileContent() throws URISyntaxException, IOException {
@@ -22,4 +25,5 @@ public class Histogram {
                 .findFirst()
                 .orElseThrow(IllegalStateException::new);
     }
+
 }
