@@ -82,9 +82,6 @@ public class Computer {
     }
 
     public static void main(String[] args) {
-        Computer pc1 = new Computer("I9", "16GB", "RTX3070", "ALIENWARE", "SUPEDDUPERMODEL-X");
-        System.out.println(pc1.toString());
-        pc1.setModel("JUST MODEL");
-        System.out.println(pc1.toString());
+
     }
 }
