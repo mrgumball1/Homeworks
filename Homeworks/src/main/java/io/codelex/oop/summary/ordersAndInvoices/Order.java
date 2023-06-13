@@ -1,26 +1,34 @@
 package io.codelex.oop.summary.ordersAndInvoices;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private List<Item> items;
+    private List<SellableThing> items;
 
     public Order() {
         items = new ArrayList<>();
     }
 
-    public List<Item> getItems() {
+    public List<SellableThing> getItems() {
         return items;
     }
 
-    public void addItem(Item item) {
+    public void addItem(SellableThing item) throws BadFoodException {
+        if (item instanceof FoodItem foodItem) {
+
+            LocalDate today = LocalDate.now();
+            if (foodItem.getBestBefore().isBefore(today)) {
+                throw new BadFoodException("Food are rotten");
+            }
+        }
         items.add(item);
     }
 
     public String getOrderText() {
         StringBuilder sb = new StringBuilder();
-        for (Item item : items) {
+        for (SellableThing item : items) {
             sb.append(item.getFullInfo()).append("\n");
         }
         return sb.toString();

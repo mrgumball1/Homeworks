@@ -1,14 +1,16 @@
 package io.codelex.oop.summary.ordersAndInvoices;
 
-public class FoodItem extends AbstractItem {
-    private String bestBefore;
+import java.time.LocalDate;
 
-    public FoodItem(String name, double price, String bestBefore) {
+public class FoodItem extends AbstractItem {
+    private final LocalDate bestBefore;
+
+    public FoodItem(String name, double price, LocalDate bestBefore) {
         super(name, price);
         this.bestBefore = bestBefore;
     }
 
-    public String getBestBefore() {
+    public LocalDate getBestBefore() {
         return bestBefore;
     }
 

@@ -9,7 +9,11 @@ public class Invoice {
     private String invoiceNumber;
     private InvoiceStatus status;
 
-    public Invoice(Order order, String invoiceNumber) {
+
+    public Invoice(Order order, String invoiceNumber) throws WrongOrderException {
+        if (order.getItems().isEmpty()) {
+            throw new WrongOrderException("You can not add EMPTY ORDER!!!!");
+        }
         this.order = order;
         this.invoiceNumber = invoiceNumber;
         this.status = InvoiceStatus.APPROVED;
@@ -27,7 +31,7 @@ public class Invoice {
         StringBuilder sb = new StringBuilder();
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
-        double totalPrice = order.getItems().stream().mapToDouble(Item::getPrice).sum();
+        double totalPrice = order.getItems().stream().mapToDouble(SellableThing::getPrice).sum();
         double vatAmount = totalPrice * VAT_RATE;
         double totalAmount = totalPrice + vatAmount;
 
@@ -37,7 +41,7 @@ public class Invoice {
         sb.append("=                                                 =\n");
 
         int lineNumber = 1;
-        for (Item item : order.getItems()) {
+        for (SellableThing item : order.getItems()) {
             sb.append(String.format("= %d. %-45s=\n", lineNumber, item.getFullInfo()));
             lineNumber++;
         }
