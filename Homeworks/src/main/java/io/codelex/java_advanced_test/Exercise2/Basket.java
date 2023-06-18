@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Basket<T> {
 
-    List<T> basket = new ArrayList<>();
-    int size;
+    protected List<T> basket = new ArrayList<>();
+    protected int size;
 
     public void addToBasket(T something) {
         if (size >= 10) {
             throw new BasketFullException("Basket FULL!");
         } else {
-            basket.remove(something);
+            basket.add(something);
             size += 1;
         }
     }
