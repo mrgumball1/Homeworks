@@ -3,10 +3,10 @@ package io.codelex.java_advanced_test.Exercise1;
 import java.math.BigDecimal;
 
 public abstract class Card {
-    int cardNumber;
-    String fullName;
-    int ccvCode;
-    BigDecimal balance;
+    protected int cardNumber;
+    protected String fullName;
+    protected int ccvCode;
+    protected BigDecimal balance;
 
     public Card(int cardNumber, String fullName, int ccvCode, BigDecimal balance) {
         this.cardNumber = cardNumber;
